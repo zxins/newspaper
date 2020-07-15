@@ -4,6 +4,7 @@ import os
 import codecs
 import time
 import re
+import random
 from git import Repo
 from selenium import webdriver
 
@@ -72,5 +73,5 @@ if __name__ == '__main__':
         autoGreen = AutoGreen('firefox')
     while True:
         print(autoGreen.green()+": success")
-        seconds = sleeptime(24,0,0)
+        seconds = sleeptime(random.randint(6, 48),0,0)
         time.sleep(seconds)
