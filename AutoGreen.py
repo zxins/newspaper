@@ -36,7 +36,11 @@ class AutoGreen:
                 driver = webdriver.Firefox(options=firefox_options)
             else:
                 chrome_options = webdriver.ChromeOptions()
-                chrome_options.headless = True
+                chrome_optionsiheadless = True
+                chrome_options.add_argument('--headless')
+                chrome_options.add_argument('--no-sandbox')
+                chrome_options.add_argument('--disable-gpu')
+                chrome_options.add_argument('--disable-dev-shm-usage')
                 driver = webdriver.Chrome(options=chrome_options)
             driver.get("https://www.zhihu.com/billboard")
             titles = driver.find_elements_by_class_name("HotList-itemTitle")
